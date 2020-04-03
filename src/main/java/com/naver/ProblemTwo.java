@@ -36,7 +36,8 @@ public class ProblemTwo<K,V> {
                 writeLock.unlock();
                 readLock.lock();
             }
-            return cache.get(key);
+            value = cache.get(key);
+            return value;
         }finally {
             readLock.unlock();
         }
